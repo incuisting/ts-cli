@@ -1,4 +1,4 @@
-import { createAction } from 'redux-actions';
+import { createAction } from 'typesafe-actions';
 
 export type History = Array<{ squares: Array<string | null>; }>;
 export type XIsNext = boolean;
@@ -25,8 +25,14 @@ export const gameActions = {
       stepNumber: StepNumber,
       xIsNext: XIsNext
     ) => {
-      // console.log('actions', history, stepNumber, xIsNext);
-      return { history, stepNumber, xIsNext };
+      return {
+        type: 'HANDLE_CLICK',
+        payload: {
+          history,
+          stepNumber,
+          xIsNext
+        }
+      };
     }
   ),
   jumpTo: createAction(
@@ -35,7 +41,13 @@ export const gameActions = {
       stepNumber: StepNumber,
       xIsNext: XIsNext
     ) => {
-      return { stepNumber, xIsNext };
+      return {
+        type: 'JUMP_TO',
+        payload: {
+          stepNumber,
+          xIsNext
+        }
+      };
     }
   )
 };
