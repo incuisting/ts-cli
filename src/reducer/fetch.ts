@@ -39,15 +39,3 @@ export const fetchReducer = combineReducers<FetchState>({
         }
     },
 });
-
-// export default handleActions<FetchState>(
-//     {
-//         ['FETCH_USER']: (state, payload ) => {
-//             return Object.assign({}, state, {
-//                 id: payload.id,
-//                 firstName: payload.firstName,
-//                 lastName: payload.lastName
-//             })
-//         }
-//     }
-//     , defaultState)

@@ -2,14 +2,15 @@ import { applyMiddleware, createStore, compose } from 'redux';
 import rootReducer from '../reducer/index';
 import { RootState } from './rootState';
 import logger from 'redux-logger';
-// import { createEpicMiddleware } from 'redux-observable';
+import { createEpicMiddleware } from 'redux-observable';
+import { rootEpic } from '../epic/index';
 
 const composeEnhancers = compose;
 
 function configureStore(initialState?: RootState) {
     // configure middlewares
     const middlewares = [
-        // createEpicMiddleware(rootEpic),
+        createEpicMiddleware(rootEpic),
         logger
     ];
     // compose enhancers
