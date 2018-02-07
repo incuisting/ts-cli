@@ -27,7 +27,7 @@ export const fetchAcitons = {
         ) => ({
             type: 'FETCH_USER_FULFILLED',
             payload: {
-                res
+                ...res
             }
         })
     )

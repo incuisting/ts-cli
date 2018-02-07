@@ -18,7 +18,7 @@ const fetchUserEpic: Epic<RootAction, RootState> =
     (action$, store) => action$
         .filter(isActionOf(fetchAcitons.fetchUser))
         .mergeMap(action =>
-            fakeAjax(`/api/users/${action}`)
+            fakeAjax(`/api/users/${action.payload.id}`)
             .map(response => fetchAcitons.fetchUserFulfilled(response))
             .takeUntil(action$.ofType('FETCH_USER_CANCELLED'))
         );

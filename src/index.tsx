@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store/index';
 import registerServiceWorker from './registerServiceWorker';
 import Game from './containers/Game';
-import { Fetch } from './containers/FetchTest';
+import  Fetch  from './containers/FetchTest';
 import './index.css';
 
 ReactDOM.render(

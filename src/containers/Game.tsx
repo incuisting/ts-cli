@@ -1,10 +1,11 @@
 import { gameActions } from '../actions/gameActions';
 import { connect } from 'react-redux';
-import { StoreState } from '../types';
+// import { StoreState } from '../types';
 import * as React from 'react';
 import { Board } from '../components/Board';
 import { calculateWinner } from '../tool/calculateWinner';
 import styled from 'styled-components';
+import { RootState } from '../store/rootState';
 
 // mapStateToProps 
 interface StateProps {
@@ -92,8 +93,8 @@ export class Game extends React.Component<GameProps, State> {
     }
 }
 
-const mapStateToProps = (state: StoreState<GameProps>): StateProps => {
-    const _game: GameProps = state.game;
+const mapStateToProps = (state: RootState): StateProps => {
+    const _game = state.game;
     return {
         history: _game.history,
         xIsNext: _game.xIsNext,

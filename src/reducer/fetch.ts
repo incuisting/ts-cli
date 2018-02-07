@@ -3,10 +3,16 @@ import { Id, FirstName, LastName, fetchAcitons } from '../actions/fetchAction';
 import { combineReducers } from 'redux';
 // import { RootAction } from '../store/rootAction';
 
-export interface FetchState {
+interface User {
     id: Id;
     firstName: FirstName;
     lastName: LastName;
+}
+
+type IsFetchingUser = boolean;
+export interface FetchState {
+    isFetchingUser: IsFetchingUser;
+    users: User;
 }
 
 export const fetchReducer = combineReducers<FetchState>({
@@ -18,7 +24,7 @@ export const fetchReducer = combineReducers<FetchState>({
             case getType(fetchAcitons.fetchUserFulfilled):
                 return {
                     ...state,
-                    [action.payload.id]: action.payload
+                    ...action.payload
                 };
 
             default:
