@@ -4,13 +4,18 @@ import { RootState } from './rootState';
 import logger from 'redux-logger';
 import { createEpicMiddleware } from 'redux-observable';
 import { rootEpic } from '../epic/index';
+import { routerMiddleware } from 'react-router-redux';
+// import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 
+export const history = createBrowserHistory();
 const composeEnhancers = compose;
 
 function configureStore(initialState?: RootState) {
     // configure middlewares
     const middlewares = [
         createEpicMiddleware(rootEpic),
+        routerMiddleware(history),
         logger
     ];
     // compose enhancers
