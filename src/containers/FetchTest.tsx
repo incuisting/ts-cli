@@ -28,7 +28,6 @@ export class Fetch extends React.Component<FetchProps, {}> {
     render() {
         // const { fetchUser} = this.props;
         const { id, firstName, lastName } = this.props;
-        console.log('render', id);
         return (
             <div>
                 <button onClick={this.fetch}>fethch</button>
