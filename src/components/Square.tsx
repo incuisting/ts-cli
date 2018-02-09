@@ -3,17 +3,17 @@ import styled from 'styled-components';
 
 interface Props { // 定义prop的接口
     value: string | null; // 定义传入value的类型 为一个Union Types
-    onClick: () => void;
+    onClick?: () => void;
     className?: string;
 }
 
-function SquareBody(props: Props) {
+export const SquareBody = (props: Props) => {
     return (
         <button className={props.className} onClick={props.onClick}>
             {props.value}
         </button>
     );
-}
+};
 
 export const Square = styled(SquareBody) `
     background: #fff;
