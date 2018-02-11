@@ -1,13 +1,8 @@
-## 井字棋
-对react官方文档的井字棋进行的ts的重现。
+## TypeScript + React 的项目架子  
+其中集成： 
+Redux,React,react-router-redux,styled-components,redux-observable,enzyme  
+ 
 
-**** 
-TODOs： 
-- 用typescript重现功能
-- 引入styled-components做样式
-- redux，redux-react
+### 目的： 
 
-
-****
-资料：
-- [React and Redux with TypeScript](https://levelup.gitconnected.com/react-and-redux-with-typescript-da0c37537a79 )
+刚刚开始接触TS，并不知道什么比较好用或者成熟的React的Ts脚手架，所以就根据TS官方的教程自己先配了一个。这个项目主要是为自己的TS和rxjs的学习提供方便，由于个人能力尚浅，不免会一些考虑不到的地方。如若有问题，欢迎issue和pr! :)
