@@ -2,7 +2,7 @@ import { getType } from 'typesafe-actions';
 import { Id, FirstName, LastName, fetchAcitons } from '../actions/fetchAction';
 import { combineReducers } from 'redux';
 // import { RootAction } from '../store/rootAction';
-
+// 如果升级到redux4.0 可以在 combineReducer 的泛型里引入RootAction
 interface User {
     id: Id;
     firstName: FirstName;
