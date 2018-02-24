@@ -7,7 +7,7 @@ import store, { history } from './store/index';
 import registerServiceWorker from './registerServiceWorker';
 import Game from './containers/Game';
 import Fetch from './containers/FetchTest';
-import { Nav } from './containers/Nav';
+import Nav from './containers/Nav';
 import './index.css';
 
 ReactDOM.render(
